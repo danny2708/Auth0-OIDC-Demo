@@ -1,0 +1,25 @@
+server:
+  port: 8080
+
+spring:
+  security:
+    oauth2:
+      client:
+        registration:
+          auth0:
+            client-id: VKH3H8xCOY4241Dnn6iCIjHPnSAzj8tC
+            client-secret: Ajan-VHMPpl7XfpYc4HGOjPnXnHcyzeCoF9DLcuxRNpGN3QvDJ3Lyp7-qPwgCsBC
+            scope:
+              - openid
+              - profile
+              - email
+            redirect-uri: "{baseUrl}/login/oauth2/code/{registrationId}"
+            authorization-grant-type: authorization_code
+        provider:
+          auth0:
+            issuer-uri:  https://dev-zvuxy6hhvedtp2cr.us.auth0.com/
+
+# Optional: helper properties used in controller for logout link (can be removed if you prefer)
+auth0:
+  client-id: VKH3H8xCOY4241Dnn6iCIjHPnSAzj8tC
+  domain: https://dev-zvuxy6hhvedtp2cr.us.auth0.com/

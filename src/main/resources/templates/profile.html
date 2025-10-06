@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8" />
+    <title>Profile</title>
+</head>
+<body>
+    <h1>Profile</h1>
+    <div th:if="${user != null}">
+        <p>Name: <span th:text="${user.fullName}">Name</span></p>
+        <p>Email: <span th:text="${user.email}">Email</span></p>
+        <h3>All claims</h3>
+        <pre th:text="${user.claims}"></pre>
+
+        <p>
+            <a th:href="@{/logout}">Logout (local)</a> |
+            <a th:href="@{/logout-auth0}">Logout (Auth0 SSO)</a>
+        </p>
+    </div>
+    <div th:if="${user == null}">
+        <p>Not authenticated.</p>
+        <a th:href="@{/oauth2/authorization/auth0}">Login</a>
+    </div>
+</body>
+</html>

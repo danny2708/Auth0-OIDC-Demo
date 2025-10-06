@@ -1,0 +1,16 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8" />
+    <title>Auth0 OIDC Demo - Home</title>
+</head>
+<body>
+<h1>Welcome to Auth0 OIDC Demo</h1>
+<p>
+    <a th:href="@{/oauth2/authorization/auth0}">Login with Auth0</a>
+</p>
+<p>
+    <a th:href="@{/profile}">Profile (requires login)</a>
+</p>
+</body>
+</html>
